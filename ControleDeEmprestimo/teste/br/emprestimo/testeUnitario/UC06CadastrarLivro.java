@@ -41,8 +41,8 @@ public class UC06CadastrarLivro {
 	}
 	private void assertEqual(String string, String isbn) {
 		// TODO Auto-generated method stub
-		
 	}
+	
 	@Test
 	public void CT06UC06CadastrarLivro_obtem_titulo() {
 		livro.setTitulo("Engenharia de Software");
@@ -61,6 +61,4 @@ public class UC06CadastrarLivro {
 		livro.setAutor("Pressman");
 		assertEqual("Pressman",livro.getAutor()); 
 	}
-	
-
 }
