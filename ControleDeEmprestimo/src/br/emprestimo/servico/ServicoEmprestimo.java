@@ -14,7 +14,7 @@ public class ServicoEmprestimo {
 			throw new RuntimeException("Dados inválidos.");
 		} else {
 			Emprestimo emprestimo = new Emprestimo();
-			emprestimo.setLivro(livro);
+			//emprestimo.setLivro(livro);
 			emprestimo.setUsuario(usuario);
 			// data do emprestimo - data atual do sistema
 			DateTime dataAtual = new DateTime();

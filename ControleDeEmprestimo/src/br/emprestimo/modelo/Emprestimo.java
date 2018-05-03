@@ -5,17 +5,17 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
 public class Emprestimo {
-	private static Livro livro;
+	private Livro livro;
 	private Usuario usuario;
 	private String dataEmprestimo;
 	private String dataDevolucao;
 
-	public static Livro getLivro() {
+	public Livro getLivro() {
 		return livro;
 	}
 
-	public static void setLivro(String string) {
-		if (string == null) {
+	public void setLivro(Livro livro) {
+		if (livro == null) {
 			throw new RuntimeException("Livro invalido");
 		}
 		

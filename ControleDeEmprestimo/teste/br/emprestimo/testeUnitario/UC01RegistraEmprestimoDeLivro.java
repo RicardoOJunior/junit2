@@ -73,13 +73,13 @@ public class UC01RegistraEmprestimoDeLivro {
 	}
 	@Test(expected=RuntimeException.class)
 	public void CT06UC01FB_registrar_emprestimo_com_Livro_Nulo() {
-		Emprestimo.setLivro(null);
+		emprestimo.setLivro(null);
 	}
 	
 	@Test
 	public void CT07UC01FB_registrar_emprestimo_testa_Livro() {
-		Emprestimo.setLivro("SO");
-		assertEqual("SO",Emprestimo.getLivro()); 
+		emprestimo.setLivro(livro);
+		assertEqual("SO",emprestimo.getLivro()); 
 	}
 	
 	private void assertEqual(String string, Livro livro2) {
@@ -87,5 +87,21 @@ public class UC01RegistraEmprestimoDeLivro {
 		
 	}
 	
+@Test
+public void CT08UC01FB_registrar_emprestimo_Quando_Data_Domingo_Erro() {
+	Emprestimo umEmprestimo = new Emprestimo();
+	String data = "29/04/2018"; //domingo
+	//ação
+	try {
+		umEmprestimo.setDataDevolucao(data);
+		fail ("Nao deveria aceitar uma data no domingo");
+	}
+	catch(RuntimeException e) {
+		//verificação
+		String resultadoEsperado = "Data inválida";
+		assertTrue(resultadoEsperado.equals(e.getMessage()));
+	}
 	
+}
+
 }
